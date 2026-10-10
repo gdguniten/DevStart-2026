@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pancake Run</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <p class="session-label">DevStart 2026</p>
+
+        <div class="hero-title-row">
+          <svg class="hero-decor" viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+            <ellipse cx="40" cy="54" rx="30" ry="9" fill="#e0b076" />
+            <ellipse cx="40" cy="45" rx="32" ry="10" fill="#ffe8b5" />
+            <ellipse cx="40" cy="35" rx="28" ry="8" fill="#e0b076" />
+            <ellipse cx="40" cy="26" rx="31" ry="10" fill="#ffe8b5" />
+            <ellipse cx="40" cy="16" rx="26" ry="8" fill="#e0b076" />
+            <circle cx="26" cy="15" r="4" fill="#f2a7be" />
+            <circle cx="42" cy="17" r="4.5" fill="#f2a7be" />
+            <rect x="33" y="4" width="14" height="7" rx="3" fill="#fff7cf" />
+          </svg>
+
+          <h1>Pancake Run</h1>
+
+          <svg class="hero-decor hero-decor-bee" viewBox="0 0 80 56" aria-hidden="true" focusable="false">
+            <ellipse cx="34" cy="14" rx="12" ry="7" fill="#c7e0ff" opacity="0.9" transform="rotate(-18 34 14)" />
+            <ellipse cx="48" cy="12" rx="12" ry="7" fill="#cfcfff" opacity="0.9" transform="rotate(12 48 12)" />
+            <path d="M22 28 L11 23 L13 34 Z" fill="#5b4a66" />
+            <ellipse cx="42" cy="32" rx="24" ry="15" fill="#fff7cf" />
+            <path d="M32 19 C36 24 36 40 32 45 L40 45 C36 40 36 24 40 19 Z" fill="#5b4a66" />
+            <path d="M48 19 C52 24 52 40 48 45 L55 45 C51 40 51 24 54 19 Z" fill="#5b4a66" />
+            <circle cx="60" cy="28" r="4" fill="#fffdf7" />
+            <circle cx="61" cy="28.5" r="2" fill="#5b4a66" />
+            <path d="M62 36 c3 1.5 6 1 8 -1" stroke="#5b4a66" stroke-width="2" stroke-linecap="round" fill="none" />
+          </svg>
+        </div>
+
+        <p class="hero-copy">
+          A very serious pink cat. An endless parade of pancake stacks and
+          grumpy bees. Jump well, duck smarter, land soft, eat nothing.
+        </p>
+
+        <a class="hero-cta" href="#game">Play now ↓</a>
+      </section>
+
+      <section class="game-section" id="game">
+        <div class="game-card" aria-labelledby="game-title">
+          <div class="scoreboard">
+            <h2 id="game-title">Field run</h2>
+            <div class="scores">
+              <p>Score: <strong id="score">0</strong></p>
+              <p>Best: <strong id="best">0</strong></p>
+              <button class="mute-button" id="mute-button" type="button" aria-pressed="false">
+                Sound: on
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="game-stage"
+            id="game-stage"
+            tabindex="0"
+            aria-label="Cat runner game. Press Space or the up arrow to jump, Down or Shift to duck."
+          >
+            <div class="cloud cloud-one" aria-hidden="true"></div>
+            <div class="cloud cloud-two" aria-hidden="true"></div>
+            <div class="stars" aria-hidden="true"></div>
+            <div class="hills" aria-hidden="true">
+              <div class="hills-far"></div>
+              <div class="hills-near"></div>
+            </div>
+
+            <div class="cat" id="cat" aria-label="Pink cat">
+              <svg viewBox="0 0 110 90" aria-hidden="true" focusable="false">
+                <g class="cat-art">
+                  <path
+                    class="cat-tail"
+                    d="M30 48 C14 46 6 32 10 16 C18 28 26 32 36 36 Z"
+                    fill="#e89ab3"
+                  />
+                  <g class="legs legs-a">
+                    <path d="M34 60 H45 a7 7 0 0 1 7 7 V83 a5 5 0 0 1 -5 5 H29 a5 5 0 0 1 -5 -5 V67 a7 7 0 0 1 7 -7 Z" fill="#e89ab3" />
+                    <path d="M62 60 H73 a7 7 0 0 1 7 7 V83 a5 5 0 0 1 -5 5 H57 a5 5 0 0 1 -5 -5 V67 a7 7 0 0 1 7 -7 Z" fill="#ef9fba" />
+                  </g>
+                  <ellipse cx="50" cy="50" rx="27" ry="19" fill="#f2a7be" />
+                  <ellipse cx="52" cy="54" rx="16" ry="12" fill="#fff7cf" />
+                  <g class="legs legs-b">
+                    <path d="M45 60 H56 a7 7 0 0 1 7 7 V83 a5 5 0 0 1 -5 5 H40 a5 5 0 0 1 -5 -5 V67 a7 7 0 0 1 7 -7 Z" fill="#ef9fba" />
+                    <path d="M71 60 H82 a7 7 0 0 1 7 7 V83 a5 5 0 0 1 -5 5 H66 a5 5 0 0 1 -5 -5 V67 a7 7 0 0 1 7 -7 Z" fill="#f2a7be" />
+                  </g>
+                  <circle cx="82" cy="34" r="19" fill="#f2a7be" />
+                  <path d="M70 22 L67 7 L81 15 Z" fill="#f2a7be" />
+                  <path d="M94 21 L99 7 L86 15 Z" fill="#f2a7be" />
+                  <path d="M72 19 L70.5 12 L77 15.5 Z" fill="#e08faa" />
+                  <path d="M92 18.5 L95.5 12 L88.5 15.5 Z" fill="#e08faa" />
+                  <ellipse cx="90" cy="39" rx="8" ry="6" fill="#fffdf7" opacity="0.65" />
+                  <circle cx="87" cy="30" r="4.5" fill="#fffdf7" />
+                  <circle cx="88.5" cy="30.5" r="2.3" fill="#5b4a66" />
+                  <ellipse cx="96" cy="35.5" rx="2.2" ry="1.8" fill="#e08faa" />
+                  <path d="M93 41 c3 1.5 6 1.5 9 0" stroke="#5b4a66" stroke-width="2" stroke-linecap="round" fill="none" />
+                  <path d="M99 28 H107 M99 33 H107" stroke="#5b4a66" stroke-width="1.5" stroke-linecap="round" opacity="0.45" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="ground" aria-hidden="true"></div>
+
+            <div class="start-overlay" id="start-overlay">
+              <p class="overlay-title" id="overlay-title">Ready?</p>
+              <button class="start-button" id="start-button" type="button" aria-label="Start game">
+                <svg class="paw-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <ellipse cx="12" cy="15.5" rx="5.5" ry="4.5" fill="currentColor" />
+                  <circle cx="6" cy="9.5" r="2.2" fill="currentColor" />
+                  <circle cx="10.2" cy="6.8" r="2.2" fill="currentColor" />
+                  <circle cx="14.8" cy="6.8" r="2.2" fill="currentColor" />
+                  <circle cx="18.6" cy="9.8" r="2.2" fill="currentColor" />
+                </svg>
+              </button>
+              <p class="overlay-hint">Space/↑ jump · ↓/Shift duck</p>
+            </div>
+          </div>
+
+          <div class="controls">
+            <p id="status" aria-live="polite">Hit the paw, then Space/↑ to jump and ↓/Shift to duck.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="howto" id="how-to-play">
+        <div class="howto-intro">
+          <h2>What is Pancake Run?</h2>
+          <p class="lede">
+            A tiny keyboard-only endless runner. You are the pink cat on a
+            breakfast field trip: obstacles rush in from the right, the pace
+            keeps climbing, and the only goal is to survive as long as you can
+            without face-planting.
+          </p>
+        </div>
+
+        <div class="howto-grid">
+          <article class="howto-card">
+            <h3>Controls</h3>
+            <ul class="key-list">
+              <li>
+                <span class="keys"><kbd>Space</kbd><kbd>↑</kbd></span>
+                <strong>Jump</strong>
+              </li>
+              <li>
+                <span class="keys"><kbd>↓</kbd><kbd>Shift</kbd></span>
+                <strong>Duck</strong>
+              </li>
+            </ul>
+            <p>
+              Press <kbd>Space</kbd> to start the run. Tap <kbd>↓</kbd> mid-air
+              to dive back down faster.
+            </p>
+          </article>
+
+          <article class="howto-card">
+            <h3>Obstacles</h3>
+            <p><strong>Pancake stacks</strong> sit on the ground. Jump straight over them.</p>
+            <p>
+              <strong>Bees</strong> fly at three heights:
+              <strong>low</strong> means jump,
+              <strong>mid</strong> means duck,
+              <strong>high</strong> means run underneath.
+            </p>
+          </article>
+
+          <article class="howto-card">
+            <h3>Scoring</h3>
+            <p>Points tick up <strong>every second</strong> you stay alive. Clear an obstacle and it makes a little pop.</p>
+            <p>Your best run is saved in this browser automatically.</p>
+          </article>
+        </div>
+
+        <div class="notes">
+          <h2>The important bits</h2>
+          <p class="note">Speed rises as your score grows</p>
+          <p class="note">Sky turns dusk at 120, night at 350</p>
+          <p class="note">One hit and the run is over</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Pancake Run · DevStart 2026 · pink cat, grumpy bees, zero pancakes eaten</p>
+    </footer>
+  </body>
+</html>
