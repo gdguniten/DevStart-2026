@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dino Run</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="intro">
+        <p class="session-label">DevStart 2026</p>
+        <h1>Dino Run</h1>
+        <p>Jump over the field rocks and keep the expedition moving.</p>
+      </header>
+
+      <section class="game-card" aria-labelledby="game-title">
+        <div class="scoreboard">
+          <h2 id="game-title">Field run</h2>
+          <p>Score: <strong id="score">0</strong></p>
+        </div>
+
+        <div
+          class="game-stage"
+          id="game-stage"
+          tabindex="0"
+          aria-label="Dinosaur runner game. Press Space or the up arrow to jump."
+        >
+          <div class="cloud cloud-one" aria-hidden="true"></div>
+          <div class="cloud cloud-two" aria-hidden="true"></div>
+          <div class="dino" id="dino" aria-label="Dinosaur">🦖</div>
+          <div class="obstacle" id="obstacle" aria-label="Rock">🪨</div>
+          <div class="ground" aria-hidden="true"></div>
+        </div>
+
+        <div class="controls">
+          <button id="start-button" type="button">Start game</button>
+          <p id="status" aria-live="polite">Press Start game, then Space or ↑ to jump.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

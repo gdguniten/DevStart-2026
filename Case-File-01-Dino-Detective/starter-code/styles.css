@@ -1,0 +1,173 @@
+/* Use border-box so width and height include padding and borders. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #000;
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Keep the page centred and stop it from becoming too wide. */
+.page-shell {
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.intro {
+  margin-bottom: 24px;
+}
+
+.session-label,
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: 3rem;
+}
+
+/* The outer border shows the size of the complete game. */
+.game-card {
+  border: 2px solid #000;
+}
+
+/* Flexbox places the title on the left and score on the right. */
+.scoreboard,
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+}
+
+.scoreboard {
+  border-bottom: 2px solid #000;
+}
+
+.scoreboard h2,
+.scoreboard p,
+.controls p {
+  margin-bottom: 0;
+}
+
+/* Relative positioning makes this the reference box for the game objects. */
+.game-stage {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+  background: #fff;
+  outline: none;
+}
+
+.game-stage:focus-visible {
+  outline: 3px dashed #000;
+  outline-offset: -6px;
+}
+
+/* Absolute positioning attaches the ground to the bottom of the stage. */
+.ground {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 42px;
+  border-top: 2px solid #000;
+}
+
+.dino,
+.obstacle {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  user-select: none;
+}
+
+/* The dinosaur stays near the left and sits above the 42px ground. */
+.dino {
+  left: 12%;
+  bottom: 42px;
+  width: 76px;
+  height: 76px;
+  font-size: 3.8rem;
+  transform: scaleX(-1);
+}
+
+/* JavaScript changes left while bottom keeps the obstacle on the ground. */
+.obstacle {
+  bottom: 42px;
+  left: calc(100% + 60px);
+  width: 56px;
+  height: 56px;
+  font-size: 3rem;
+}
+
+/* The clouds are simple examples of absolute top and left positions. */
+.cloud {
+  position: absolute;
+  width: 90px;
+  height: 28px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.cloud-one {
+  top: 50px;
+  left: 48%;
+}
+
+.cloud-two {
+  top: 110px;
+  left: 72%;
+  width: 64px;
+  height: 22px;
+}
+
+.controls {
+  min-height: 76px;
+  border-top: 2px solid #000;
+}
+
+button {
+  flex: 0 0 auto;
+  border: 2px solid #000;
+  padding: 10px 16px;
+  color: #000;
+  background: #fff;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+  color: #fff;
+  background: #000;
+}
+
+button:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 3px;
+}
+
+/* Stack the controls when there is not enough horizontal space. */
+@media (max-width: 620px) {
+  .scoreboard,
+  .controls {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .game-stage {
+    height: 260px;
+  }
+}
